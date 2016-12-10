@@ -1,0 +1,19 @@
+{
+  "name": "skb-start",
+  "version": "1.0.0",
+  "description": "DEV-Intensive Node.js & React. Skill Branch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon aplusb.js"
+  },
+  "author": "Maxim",
+  "license": "ISC",
+  "dependencies": {
+    "skb": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "cors": "2.8.1"
+  }
+}
