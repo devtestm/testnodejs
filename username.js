@@ -47,12 +47,15 @@ app.get('/task2b', (req, res) => {
 	res.send(username);
 });
 
-function checkString(str) {
-	if (str.search(/[0-9_/]/) !== -1) {
-		return true;
-	}
-	return false;
-}
+app.get('/task2c', (req, res) => {
+
+	var username = req.query;
+	console.log(username);
+
+	
+	
+	res.send(username);
+});
 
 app.listen(3000, function(){
 	
