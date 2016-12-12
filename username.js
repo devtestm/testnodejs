@@ -49,13 +49,39 @@ app.get('/task2b', (req, res) => {
 
 app.get('/task2c', (req, res) => {
 
-	var username = req.query;
+	var username = req.query.username;
+
+	var u = canonize(username);
+	console.log(u);
+	if(u == null)
+	{
+		username = username.trim().substring(username.indexOf('/') + 1);
+		
+		username = (username.search('\\?') >= 0) ? username.substring(0,username.indexOf('?')) : username;
+		
+	}
+	else {
+		username = u;
+		
+	}
+
+	username = (username.search('/') >= 0) ? username.substring(0,username.indexOf('/')) : username;
+	username = (username.search('&') >= 0) ? username.substring(0,username.indexOf('&')) : username; 
+	username = (username.search('@') >= 0) ? username.substring(username.lastIndexOf('@') + 1) : username; 
+
 	console.log(username);
 
+
 	
-	
-	res.send(username);
+	res.send('@' + username);
 });
+
+function canonize(url) {
+	const re = new RegExp('^(.*?//.*?/)(.*)$');
+	const username = url.match(re);
+	console.log(username);
+	return username == null ? null : username[2];
+}
 
 app.listen(3000, function(){
 	
