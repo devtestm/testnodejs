@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon aplusb.js"
+    "dev": "nodemon colors.js"
   },
   "author": "Maxim",
   "license": "ISC",
   "dependencies": {
-    "skb": "^1.0.0"
+    "skb": "^1.0.0",
+    "hsl-to-hex": "1.0.0",
+    "color-convert": "1.8.2"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
